@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f8f5">
+  <meta name="description" content="Parham Parviz Farzam is a penetration tester and red team operator based in Edmonton, Alberta, with six years of experience in offensive security and detection validation.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Parham Parviz Farzam | Penetration Tester & Red Team Operator">
+  <meta property="og:description" content="Offensive security, thoughtfully executed. Penetration testing, red teaming, and detection validation.">
+  <title>Parham Parviz Farzam | Offensive Security</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='5' fill='%23242a29'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial,sans-serif' font-weight='600' font-size='25' fill='%23ffffff'%3EPF%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f8f8f5;
+      --surface: #ffffff;
+      --ink: #252b29;
+      --muted: #646b67;
+      --line: #dedfda;
+      --accent: #536c60;
+      --accent-dark: #344b40;
+      --sans: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+      --serif: "Newsreader", Georgia, serif;
+      --max: 1192px;
+      --pad: clamp(1.4rem, 5vw, 4.75rem);
+      --shadow: 0 18px 40px rgba(37,43,41,.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+    body { margin: 0; background: var(--page); color: var(--ink); font: 400 16px/1.65 var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    ::selection { background: #d9e2db; }
+    .container { width: min(100%, var(--max)); margin-inline: auto; padding-inline: var(--pad); }
+    .skip { position: absolute; left: 1rem; top: -5rem; z-index: 50; background: var(--ink); color: white; padding: .6rem 1rem; }
+    .skip:focus { top: 1rem; }
+    .topbar { border-bottom: 1px solid var(--line); background: rgba(248,248,245,.92); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 20; }
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: 91px; }
+    .identity { font-size: 15px; text-decoration: none; letter-spacing: -.02em; font-weight: 700; white-space: nowrap; }
+    .top-links { display: flex; align-items: center; gap: clamp(1.25rem, 2.4vw, 2rem); list-style: none; margin: 0; padding: 0; flex-wrap: wrap; justify-content: end; }
+    .top-links a, .text-link { text-decoration: none; font-size: 13px; font-weight: 600; }
+    .top-links a { color: #4e5651; }
+    .top-links a:hover, .text-link:hover { color: var(--accent-dark); }
+    .top-links .nav-contact { border-bottom: 1px solid var(--ink); padding-bottom: 5px; color: var(--ink); }
+
+    .hero { padding-block: clamp(4.5rem, 10vw, 9.5rem) clamp(4rem, 8vw, 7rem); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(300px, .95fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .17em; font-size: 11px; font-weight: 700; line-height: 1.5; color: var(--accent-dark); }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(3.2rem, 5.7vw, 5.4rem); line-height: 1.02; letter-spacing: -.052em; margin: 1.25rem 0 1.5rem; max-width: 12ch; }
+    h1 span { display: block; }
+    h1 span:last-child { color: var(--accent); }
+    .hero-copy { max-width: 37rem; font-size: clamp(1rem, 1.35vw, 1.13rem); line-height: 1.85; color: #515b55; margin: 0 0 2rem; }
+    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 1.5rem; }
+    .action-primary, .action-secondary { display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; font-size: 13px; font-weight: 650; min-height: 48px; padding: .9rem 1.25rem; }
+    .action-primary { background: var(--ink); color: white; }
+    .action-primary:hover { background: var(--accent-dark); }
+    .action-secondary { border: 1px solid var(--line); background: var(--surface); }
+    .action-secondary:hover { border-color: #c6ccc7; }
+    .text-link { border-bottom: 1px solid #b5bcb6; padding-bottom: 5px; }
+    .arrow { font-size: 16px; line-height: 1; font-family: Arial, sans-serif; font-weight: 400; }
+
+    .profile-card { background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); padding: clamp(1.2rem, 2.5vw, 1.65rem); }
+    .portrait { aspect-ratio: 4 / 5; width: 100%; object-fit: cover; display: block; }
+    .portrait-frame { overflow: hidden; margin-bottom: 1.2rem; background: #e8ebe7; }
+    .profile-card h2 { font-size: 16px; font-weight: 650; margin: 0 0 .35rem; }
+    .profile-card p { margin: 0 0 1rem; color: var(--muted); font-size: 14px; }
+    .meta-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .meta-list li { display: flex; justify-content: space-between; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+    .meta-list span:first-child { color: var(--muted); }
+    .meta-list span:last-child { text-align: right; font-weight: 600; }
+    .status-point { display: inline-block; background: #678879; height: 7px; width: 7px; border-radius: 50%; vertical-align: 1px; margin-right: .55rem; }
+
+    .band { padding-block: 1.55rem; border-block: 1px solid var(--line); }
+    .band-row { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+    .band-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); }
+    .band-items { display: flex; flex-wrap: wrap; gap: .55rem clamp(1.2rem, 4vw, 3rem); }
+    .band-items span { font-size: 12px; font-weight: 600; }
+
+    .section { padding-block: clamp(4.5rem, 8vw, 7.5rem); border-bottom: 1px solid var(--line); }
+    .section-layout { display: grid; grid-template-columns: minmax(175px, .65fr) minmax(0, 1.8fr); gap: clamp(2.5rem, 6vw, 8rem); }
+    .section-label { font-size: 11px; text-transform: uppercase; letter-spacing: .14em; color: var(--accent-dark); font-weight: 700; margin: .35rem 0 0; }
+    .section-heading { font: 400 clamp(2.25rem, 4vw, 3.5rem)/1.07 var(--serif); letter-spacing: -.04em; margin: 0 0 2.4rem; }
+    .section-intro { max-width: 41rem; color: var(--muted); margin: -1rem 0 2.1rem; }
+    .experience { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: .25rem 1.25rem; padding-block: 1.8rem 2.4rem; border-top: 1px solid var(--line); }
+    .experience:first-of-type { padding-top: 0; border-top: 0; }
+    .experience h3 { font-size: 17px; letter-spacing: -.025em; font-weight: 650; line-height: 1.45; margin: 0; }
+    .experience .company { font-size: 14px; font-weight: 500; color: var(--accent-dark); margin: .3rem 0 0; }
+    .experience time { font-size: 12px; color: var(--muted); white-space: nowrap; padding-top: .2rem; }
+    .experience ul { grid-column: 1/-1; padding-left: 1.2rem; margin: 1.05rem 0 0; color: #565f59; max-width: 45rem; font-size: 14px; line-height: 1.8; }
+    .experience li { padding-left: .2rem; margin: 0 0 .55rem; }
+    .experience li::marker { color: #9da69e; }
+    .experience:last-child { padding-bottom: 0; }
+
+    .specialties { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 3rem; }
+    .specialty { border-top: 1px solid var(--line); padding-top: 1.3rem; }
+    .specialty h3, .project-card h3 { font-size: 16px; font-weight: 650; margin: 0 0 .6rem; letter-spacing: -.02em; }
+    .specialty p { font-size: 14px; color: var(--muted); line-height: 1.8; margin: 0; }
+    .skill-table { margin: 0; }
+    .skill-row { display: grid; grid-template-columns: minmax(120px, 190px) minmax(0, 1fr); gap: 1.5rem; border-top: 1px solid var(--line); padding-block: 1.3rem; }
+    .skill-row dt { font-size: 13px; font-weight: 650; }
+    .skill-row dd { font-size: 14px; line-height: 1.75; color: var(--muted); margin: 0; }
+
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.35rem; }
+    .project-card { border: 1px solid var(--line); background: var(--surface); padding: 1.35rem; display: flex; flex-direction: column; gap: .9rem; }
+    .project-meta { display: flex; flex-wrap: wrap; gap: .65rem; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
+    .project-card p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.75; }
+    .project-links { margin-top: auto; padding-top: .2rem; }
+    .project-links a { font-size: 13px; font-weight: 650; text-decoration: none; border-bottom: 1px solid #b5bcb6; padding-bottom: 4px; }
+    .project-links a:hover { color: var(--accent-dark); }
+
+    .education-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; border-top: 1px solid var(--line); padding-block: 1.25rem; }
+    .education-item h3 { font-size: 15px; font-weight: 650; margin: 0 0 .3rem; }
+    .education-item p { font-size: 14px; color: var(--muted); margin: 0; }
+
+    .contact { padding-block: clamp(5rem, 9vw, 8rem); }
+    .contact h2 { font: 400 clamp(3rem, 6vw, 5.5rem)/1.04 var(--serif); letter-spacing: -.045em; margin: 1.2rem 0 1.4rem; }
+    .contact p { font-size: 15px; max-width: 36rem; color: var(--muted); margin: 0 0 1.8rem; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 1rem 1.25rem; align-items: center; }
+    .contact-email { display: inline-flex; align-items: center; gap: 1rem; color: var(--ink); font-size: clamp(1rem, 2vw, 1.45rem); font-weight: 550; text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: .35rem; overflow-wrap: anywhere; }
+    .contact-email:hover { color: var(--accent-dark); border-color: var(--accent-dark); }
+    .contact-small { text-decoration: none; border-bottom: 1px solid #b5bcb6; padding-bottom: 4px; font-weight: 600; font-size: 14px; }
+    .contact-small:hover { color: var(--accent-dark); }
+
+    .footer { padding-block: 1.65rem 2.2rem; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+    .footer a { text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .section-layout { grid-template-columns: 1fr; }
+      .profile-card { max-width: 500px; }
+    }
+    @media (max-width: 900px) {
+      .specialties, .project-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .topbar-inner { min-height: 76px; }
+      .top-links li:not(:last-child):not(:nth-last-child(2)) { display: none; }
+      .hero { padding-top: 3.8rem; }
+      .section { padding-block: 4.25rem; }
+      .section-heading { margin-bottom: 2rem; }
+    }
+    @media (max-width: 480px) {
+      .identity { font-size: 13px; }
+      .top-links .nav-contact { font-size: 12px; }
+      h1 { font-size: clamp(3rem, 12vw, 4.65rem); }
+      .skill-row { grid-template-columns: 1fr; gap: .25rem; }
+      .experience { grid-template-columns: 1fr; }
+      .experience time { grid-row: 3; margin-top: .25rem; }
+      .experience ul { grid-row: 4; }
+      .contact-email { font-size: 1.01rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print {
+      @page { margin: 0.6in; }
+      :root { --page: white; }
+      body { font-size: 11px; color: #111; }
+      .topbar, .hero-actions, .band, .contact, .footer { display: none; }
+      .hero { padding: 0 0 1.3rem; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .profile-card { display: none; }
+      h1 { font: 400 34px/1.05 Georgia,serif; margin: .35rem 0 .5rem; max-width: none; }
+      .hero-copy { font-size: 11px; margin: 0; }
+      .section { padding: 1.1rem 0; break-inside: avoid; }
+      .section-layout { grid-template-columns: 110px 1fr; gap: 1rem; }
+      .section-heading { font-size: 24px; margin-bottom: 1.2rem; }
+      .experience { padding-block: .7rem; }
+      .experience ul, .skill-row dd, .specialty p, .project-card p { font-size: 10px; }
+      .specialties, .project-grid { gap: 1rem; }
+    }
+  </style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="identity" href="#top" aria-label="Parham Parviz Farzam, back to top">Parham Parviz Farzam<span aria-hidden="true">.</span></a>
+    <nav aria-label="Main navigation">
+      <ul class="top-links">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a class="nav-contact" href="#contact">Get in touch <span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Penetration Tester &amp; Red Team Operator</p>
+        <h1 id="hero-heading"><span>Parham</span><span>Parviz Farzam.</span></h1>
+        <p class="hero-copy">Six years of experience in penetration testing, red teaming, and adversary simulation across enterprise infrastructure, networks, and applications. I translate technical findings into clear guidance for security and SOC teams, and I build practical security tooling to support research and validation.</p>
+        <div class="hero-actions">
+          <a class="action-primary" href="assets/Parham_ParvizFarzam_Resume.pdf">Download resume <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="action-secondary" href="https://github.com/parham-f" target="_blank" rel="noopener">View GitHub</a>
+          <a class="text-link" href="mailto:parham.parvizfarzam@gmail.com">Contact me</a>
+        </div>
+      </div>
+      <aside class="profile-card" aria-label="Profile summary">
+        <div class="portrait-frame"><img class="portrait" src="assets/portrait.jpg" alt="Portrait of Parham Parviz Farzam"></div>
+        <h2>Profile</h2>
+        <p>Offensive security specialist based in Edmonton with hands-on experience in red teaming, infrastructure testing, and detection validation.</p>
+        <ul class="meta-list">
+          <li><span>Based in</span><span>Edmonton, Alberta</span></li>
+          <li><span>Experience</span><span>6 years</span></li>
+          <li><span>Focus</span><span>Offensive security &amp;<br>adversary simulation</span></li>
+          <li><span>Status</span><span><span class="status-point" aria-hidden="true"></span>Open to opportunities</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <div class="band" aria-label="Professional focus">
+    <div class="container band-row">
+      <span class="band-label">Areas of practice</span>
+      <div class="band-items" aria-hidden="true"><span>Network &amp; Infrastructure</span><span>Web &amp; API Security</span><span>Adversary Simulation</span><span>Detection Validation</span></div>
+    </div>
+  </div>
+
+  <section class="section" id="experience" aria-labelledby="experience-heading">
+    <div class="container section-layout">
+      <p class="section-label">01 / Experience</p>
+      <div>
+        <h2 class="section-heading" id="experience-heading">Professional experience</h2>
+        <article class="experience">
+          <div><h3>Penetration Tester &amp; Red Team Operator</h3><p class="company">Blu Bank</p></div>
+          <time>Apr 2023 – Jun 2026</time>
+          <ul>
+            <li>Performed internal and external penetration tests across enterprise infrastructure, network environments, and web applications, combining automated discovery with manual validation.</li>
+            <li>Conducted MITRE ATT&amp;CK-aligned adversary simulations using CALDERA and VECTR to support SOC detection use cases and evaluate endpoint defenses.</li>
+            <li>Validated third-party findings, supported phishing assessments, and worked with security teams on actionable remediation and detection improvements.</li>
+          </ul>
+        </article>
+        <article class="experience">
+          <div><h3>Penetration Tester &amp; Red Team Operator</h3><p class="company">APK Group</p></div>
+          <time>Feb 2020 – Apr 2023</time>
+          <ul>
+            <li>Delivered internal and external network penetration tests, vulnerability assessments, and web application security assessments for clients across different industries.</li>
+            <li>Assessed infrastructure, network services, and Active Directory environments for attack paths, privilege escalation opportunities, and security misconfigurations.</li>
+            <li>Prepared reproducible technical findings and practical recommendations, then collaborated with client teams through remediation and retesting.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="expertise" aria-labelledby="expertise-heading">
+    <div class="container section-layout">
+      <p class="section-label">02 / Expertise</p>
+      <div>
+        <h2 class="section-heading" id="expertise-heading">Areas of expertise</h2>
+        <p class="section-intro">I combine rigorous technical testing with clear communication and a focus on what security teams can improve.</p>
+        <div class="specialties">
+          <article class="specialty"><h3>Infrastructure security</h3><p>Internal and external assessments, Active Directory security, vulnerability validation, and realistic attack-path analysis.</p></article>
+          <article class="specialty"><h3>Application &amp; API security</h3><p>Manual and tool-assisted assessments of web applications and APIs using established OWASP testing methodologies.</p></article>
+          <article class="specialty"><h3>Adversary simulation</h3><p>MITRE ATT&amp;CK-aligned exercises to examine attacker behavior and help defenders identify gaps in coverage.</p></article>
+          <article class="specialty"><h3>Detection &amp; remediation</h3><p>Endpoint control validation, SOC collaboration, accurate reporting, and follow-through on remediation.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills" aria-labelledby="skills-heading">
+    <div class="container section-layout">
+      <p class="section-label">03 / Skills</p>
+      <div>
+        <h2 class="section-heading" id="skills-heading">Technical toolkit</h2>
+        <dl class="skill-table">
+          <div class="skill-row"><dt>Testing &amp; assessment</dt><dd>Penetration testing, red teaming, vulnerability management, OWASP Top 10, OWASP ASVS/WSTG, SAST, DAST, SCA, and security reporting.</dd></div>
+          <div class="skill-row"><dt>Tools &amp; platforms</dt><dd>Burp Suite, Nmap, Nessus, Nuclei, Metasploit, CALDERA, VECTR, Splunk, ESET, Bitdefender, Linux, Windows, Microsoft Azure, and AWS fundamentals.</dd></div>
+          <div class="skill-row"><dt>Programming</dt><dd>Python, PowerShell, Bash, C/C++, Rust, JavaScript.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects" aria-labelledby="projects-heading">
+    <div class="container section-layout">
+      <p class="section-label">04 / Projects</p>
+      <div>
+        <h2 class="section-heading" id="projects-heading">Selected GitHub projects</h2>
+        <p class="section-intro">A few public repositories that align most closely with my work in offensive security, security validation, and defensive evasion research.</p>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-meta"><span>Python</span><span>Offensive security</span></div>
+            <h3>Exchange_C2</h3>
+            <p>A lightweight Exchange-based command-and-control client designed for controlled lab use, demonstrating simple command execution and response handling over email.</p>
+            <div class="project-links"><a href="https://github.com/parham-f/Exchange_C2" target="_blank" rel="noopener">View repository</a></div>
+          </article>
+          <article class="project-card">
+            <div class="project-meta"><span>Rust</span><span>Windows internals</span></div>
+            <h3>rust-dll-injector-apc</h3>
+            <p>A Rust implementation of DLL injection using the Windows QueueUserAPC API, created to explore process injection behavior and low-level tradecraft in authorized environments.</p>
+            <div class="project-links"><a href="https://github.com/parham-f/rust-dll-injector-apc" target="_blank" rel="noopener">View repository</a></div>
+          </article>
+          <article class="project-card">
+            <div class="project-meta"><span>Rust</span><span>Evasion research</span></div>
+            <h3>rust-argument-spoofing</h3>
+            <p>A process argument spoofing tool written in Rust that demonstrates how visible command-line arguments can be altered for research into logging, detection, and evasion techniques.</p>
+            <div class="project-links"><a href="https://github.com/parham-f/rust-argument-spoofing" target="_blank" rel="noopener">View repository</a></div>
+          </article>
+          <article class="project-card">
+            <div class="project-meta"><span>GVM / OpenVAS</span><span>Automation</span></div>
+            <h3>gvm-tools-example</h3>
+            <p>A practical reference for using gvm-tools to create scan targets, launch tasks, and track scan progress, supporting repeatable vulnerability assessment workflows.</p>
+            <div class="project-links"><a href="https://github.com/parham-f/gvm-tools-example" target="_blank" rel="noopener">View repository</a></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education" aria-labelledby="education-heading">
+    <div class="container section-layout">
+      <p class="section-label">05 / Education</p>
+      <div>
+        <h2 class="section-heading" id="education-heading">Education</h2>
+        <div class="education-item"><div><h3>Master’s in Information Security</h3><p>Iranian University</p></div></div>
+        <div class="education-item"><div><h3>Bachelor’s in Accounting</h3><p>Islamic Azad University (IAU)</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <p class="eyebrow">Get in touch</p>
+      <h2 id="contact-heading">Let's talk security.</h2>
+      <p>I'm open to opportunities in penetration testing, red teaming, and security assessment. Feel free to reach out or review more of my work on GitHub.</p>
+      <div class="contact-links">
+        <a class="contact-email" href="mailto:parham.parvizfarzam@gmail.com">parham.parvizfarzam@gmail.com <span aria-hidden="true">↗</span></a>
+        <a class="contact-small" href="https://github.com/parham-f" target="_blank" rel="noopener">GitHub profile</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© <span id="year">2026</span> Parham Parviz Farzam</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
